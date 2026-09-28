@@ -3,6 +3,14 @@ How use virtualization in Linux
 
 ## Full virtualization
 ### KVM
+```
+sudo dnf install qemu-kvm libvirt virt-install virt-viewer
+sudo systemctl daemon-reload
+sudo systemctl enable --now libvirtd
+
+qemu-img create -f qcow2 vm-test.qcow2 16G
+virt-install --name=VMTest --vcpus=2 --memory=4096 --disk path=vm-hd.qcow2,size=16 --cdrom=img.iso --os-variant=generic --network default --graphics vnc
+```
 
 ## Paravirtualization
 ### Xen
