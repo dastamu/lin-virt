@@ -31,6 +31,14 @@ qemu-img create -f qcow2 vm-hd.qcow2 16G
 ## Contenerization
 ### Docker
 ### LXC/LXD
+### Incus
+#### Dependences
+```sh
+#@ EL 10
+sudo wget -P /etc/yum.repos.d/ https://copr.fedorainfracloud.org/coprs/neelc/incus/repo/rhel+epel-10/neelc-incus-rhel+epel-10.repo
+sudo dnf update
+sudo dnf install incus incus-tools
+```
 
 ## Soft Emulation
 ### QEMU
