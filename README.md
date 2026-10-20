@@ -45,4 +45,9 @@ sudo dnf install incus incus-tools
 
 ## Host Virtualization
 ### VirtualBox
+```sh
+VBoxManage list vms
+VBoxManage startvm "MY_VM_NAME"
+VBoxManage startvm "MY_VM_NAME" --type headless
+```
 ### VMVare
