@@ -46,12 +46,15 @@ sudo dnf install incus incus-tools
 ## Host Virtualization
 ### VirtualBox
 ```sh
-VBoxManage list vms
+# Run VM
 VBoxManage startvm "MY_VM_NAME"
+# Run VM without UI
 VBoxManage startvm "MY_VM_NAME" --type headless
 ```
 #### Useful Commands
 ```sh
+# List all VM
+VBoxManage list vms
 # List running VM
 VBoxManage list runningvms
 # 
