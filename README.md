@@ -50,4 +50,10 @@ VBoxManage list vms
 VBoxManage startvm "MY_VM_NAME"
 VBoxManage startvm "MY_VM_NAME" --type headless
 ```
+#### Useful Commands
+```sh
+# List running VM
+VBoxManage list runningvms
+# 
+```
 ### VMVare
