@@ -4,13 +4,13 @@ How use virtualization in Linux
 ## Full virtualization
 ### KVM
 #### Dependences
-```
+```sh
 sudo dnf install qemu-kvm libvirt virt-install virt-viewer
 sudo systemctl daemon-reload
 sudo systemctl enable --now libvirtd
 ```
 #### Starting VM with ISO Image
-```
+```sh
 virt-install --name=VMTest --vcpus=2 --memory=4096 --disk path=vm-hd.qcow2,size=16 --cdrom=img.iso --os-variant=generic --network default --graphics vnc
 ```
 #### Usefull commands
@@ -46,7 +46,7 @@ sudo dnf install incus incus-tools
 ## Host Virtualization
 ### VirtualBox
 #### Dependences
-```
+```sh
 #@ Debian 13
 sudo apt update
 sudo apt install curl wget gnupg2 lsb-release build-essential dkms linux-headers-$(uname -r) -y
