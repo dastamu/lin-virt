@@ -45,6 +45,19 @@ sudo dnf install incus incus-tools
 
 ## Host Virtualization
 ### VirtualBox
+#### Dependences
+```
+#@ Debian 13
+sudo apt update
+sudo apt install curl wget gnupg2 lsb-release build-essential dkms linux-headers-$(uname -r) -y
+bash curl -fsSL https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/vbox.gpg
+bash echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+bash sudo apt update sudo apt install virtualbox -y
+# or with version
+bash sudo apt update sudo apt install virtualbox-7.2 -y
+bash sudo usermod -aG vboxusers $USER newgrp vboxusers
+```
+#### Running
 ```sh
 # Run VM
 VBoxManage startvm "MY_VM_NAME"
@@ -57,6 +70,13 @@ VBoxManage startvm "MY_VM_NAME" --type headless
 VBoxManage list vms
 # List running VM
 VBoxManage list runningvms
-# 
+# Pause VM
+VBoxManage controlvm "MY_VM_NAME" pause
+# Resume VM
+VBoxManage controlvm "MY_VM_NAME" resume
+# Save state VM
+VBoxManage controlvm "MY_VM_NAME" savestate
+# Poweroff
+VBoxManage controlvm "MY_VM_NAME" poweroff
 ```
 ### VMVare
